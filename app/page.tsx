@@ -6,9 +6,11 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import MenuCardItens from "@/components/menu-card-itens";
 import Banner from "@/components/banner";
+import { getProducts } from "./_data-access/product/get-products";
+import Search from "@/components/Search";
 
 const Home = async () => {
-  const menuItens = await db.menuItens.findMany({});
+  const menuItens = await getProducts();
   return (
     <div>
       {/* Header */}
@@ -17,9 +19,12 @@ const Home = async () => {
       <Banner />
 
       {/*Search*/}
+      <div className=" mx-4 mt-4">
+        <Search />
+      </div>
 
       {/*FastSearch*/}
-      <div className="flex gap-3 m-4 overflow-x-scroll pt-6 [&::-webkit-scrollbar]:hidden">
+      <div className="flex gap-3 m-4 overflow-x-scroll [&::-webkit-scrollbar]:hidden">
         {quickSearchOptions.map((option) => (
           <Button
             className="gap-2 font-bold text-md"
@@ -39,11 +44,6 @@ const Home = async () => {
           </Button>
         ))}
       </div>
-
-      {/*Content*/}
-      <h2 className="mb-3 mt-6 m-4 text-xs font-bold uppercase text-gray-400">
-        Nosso cardápio
-      </h2>
       <div className="flex flex-col m-4 gap-2">
         {menuItens.map((menuItem) => (
           <MenuCardItens menuItem={menuItem} key={menuItem.id} />

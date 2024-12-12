@@ -6,6 +6,11 @@ interface QuickSearchOptionProps {
 
 export const quickSearchOptions: QuickSearchOptionProps[] = [
   {
+    imageUrl: "/loja.svg",
+    title: "Todos",
+    alt: "Tudo que vendemos",
+  },
+  {
     imageUrl: "/cerveja.svg",
     title: "Cervejas",
     alt: "Todos os tipos de cervejas",
