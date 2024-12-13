@@ -2,18 +2,38 @@ import { Carousel, CarouselContent, CarouselItem } from "./ui/carousel";
 import Image from "next/image";
 
 const Banner = () => {
+  const banners = [
+    {
+      id: 1,
+      image: "/banner/1.png",
+      alt: "Frete",
+    },
+    {
+      id: 2,
+      image: "/banner/1.png",
+      alt: "Frete",
+    },
+    {
+      id: 3,
+      image: "/banner/1.png",
+      alt: "Frete",
+    },
+  ];
+
   return (
-    <Carousel>
-      <CarouselContent className="mt-4 mx-4 h-[120px] w-full rounded-2xl  ">
-        <CarouselItem className="w-full">
-          <Image
-            src="/banner/banner-1.svg"
-            fill
-            alt="Banner de promoção na entrega"
-          />
-        </CarouselItem>
-        <CarouselItem className="w-full"></CarouselItem>
-        <CarouselItem className="w-full"></CarouselItem>
+    <Carousel className="rounded-3xl">
+      <CarouselContent className="mt-4 mx-4   min-h-auto w-full ">
+        {banners.map((banner) => (
+          <CarouselItem key={banner.id} className=" mt-6 h-[150px] w-full">
+            <Image
+              src={banner.image}
+              key={banner.id}
+              fill
+              alt={banner.alt}
+              className="rounded-lg object-cover mx-4"
+            />
+          </CarouselItem>
+        ))}
       </CarouselContent>
     </Carousel>
   );

@@ -13,16 +13,12 @@ const Home = async () => {
   const menuItens = await getProducts();
   return (
     <div>
-      {/* Header */}
-
       {/*Banner*/}
       <Banner />
-
       {/*Search*/}
       <div className=" mx-4 mt-4">
         <Search />
       </div>
-
       {/*FastSearch*/}
       <div className="flex gap-3 m-4 overflow-x-scroll [&::-webkit-scrollbar]:hidden">
         {quickSearchOptions.map((option) => (
