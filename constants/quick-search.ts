@@ -21,14 +21,19 @@ export const quickSearchOptions: QuickSearchOptionProps[] = [
     alt: "Produtos voltados para Tabacaria",
   },
   {
+    imageUrl: "/nao-alcoolicos.svg",
+    title: "Não alcoólicos",
+    alt: "Refrigerantes e energéticos",
+  },
+  {
     imageUrl: "/destilados.svg",
     title: "Destilados",
     alt: "Destilados como vodka e outros drinks",
   },
   {
-    imageUrl: "/nao-alcoolicos.svg",
-    title: "Não alcoólicos",
-    alt: "Refrigerantes e energéticos",
+    imageUrl: "/fermentados.svg",
+    title: "Fermentados",
+    alt: "Procure por fermentados",
   },
   {
     imageUrl: "/combos.svg",
@@ -37,8 +42,8 @@ export const quickSearchOptions: QuickSearchOptionProps[] = [
   },
   {
     imageUrl: "/vinhos.svg",
-    title: "Vinhos & Fermentados",
-    alt: "Procure por vinhos e fermentados",
+    title: "Vinhos",
+    alt: "Procure por vinhos",
   },
   {
     imageUrl: "/gelo.svg",

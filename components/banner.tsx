@@ -1,40 +1,74 @@
-import { Carousel, CarouselContent, CarouselItem } from "./ui/carousel";
+"use client";
+
+import {
+  Carousel,
+  CarouselApi,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "./ui/carousel";
 import Image from "next/image";
+import Autoplay from "embla-carousel-autoplay";
+import * as React from "react";
+import { useEffect, useState } from "react";
+
+const banners = [
+  {
+    id: 1,
+    image: "frete.png",
+    alt: "Frete",
+  },
+  {
+    id: 2,
+    image: "promocao.png",
+    alt: "Frete",
+  },
+  {
+    id: 3,
+    image: "logo.png",
+    alt: "Frete",
+  },
+];
 
 const Banner = () => {
-  const banners = [
-    {
-      id: 1,
-      image: "/banner/1.png",
-      alt: "Frete",
-    },
-    {
-      id: 2,
-      image: "/banner/1.png",
-      alt: "Frete",
-    },
-    {
-      id: 3,
-      image: "/banner/1.png",
-      alt: "Frete",
-    },
-  ];
+  const [api, setApi] = useState<CarouselApi>();
+  const [current, setCurrent] = useState(0);
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    if (!api) {
+      return;
+    }
+
+    setCount(api.scrollSnapList().length);
+    setCurrent(api.selectedScrollSnap() + 1);
+
+    api.on("select", () => {
+      setCurrent(api.selectedScrollSnap() + 1);
+    });
+  }, [api]);
 
   return (
-    <Carousel className="rounded-3xl">
-      <CarouselContent className="mt-4 mx-4   min-h-auto w-full ">
+    <Carousel setApi={setApi} opts={{ loop: true }}>
+      <CarouselContent className="mt-4 mx-4 w-full ">
         {banners.map((banner) => (
-          <CarouselItem key={banner.id} className=" mt-6 h-[150px] w-full">
-            <Image
-              src={banner.image}
-              key={banner.id}
-              fill
-              alt={banner.alt}
-              className="rounded-lg object-cover mx-4"
-            />
+          <CarouselItem key={banner.id} className=" w-[300px] h-[150px]">
+            <div className=" flex items-center">
+              <Image
+                src={`/banners/${banner.image}`}
+                key={banner.id}
+                width={300}
+                height={300}
+                alt={banner.alt}
+                className="rounded-lg object-cover"
+              />
+            </div>
           </CarouselItem>
         ))}
       </CarouselContent>
+      <CarouselPrevious />
+      <CarouselNext />
     </Carousel>
   );
 };

@@ -2,6 +2,8 @@ const { PrismaClient } = require("@prisma/client");
 
 const prisma = new PrismaClient();
 
+//Como rodar o seed:
+
 async function seedDatabase() {
   try {
     const products = [
@@ -9,7 +11,7 @@ async function seedDatabase() {
         name: "Antartica 300ml",
         imageUrl:
           "https://utfs.io/f/oK9fzCAtRnIfYRGmwjDNbPXjK6cB4rtl1d9Esv2L7hGnIiM3",
-        category: "Cerveja",
+        category: "Cervejas",
         description: "",
         price: 2.49,
         size: "300ml",
@@ -20,7 +22,7 @@ async function seedDatabase() {
         name: "Brahma 300ml",
         imageUrl:
           "https://utfs.io/f/oK9fzCAtRnIfDH3HuQWGORFvfJrNWxbBokZ5SQTCtmyHswz6",
-        category: "Cerveja",
+        category: "Cervejas",
         description: "",
         price: 2.49,
         size: "300ml",
@@ -31,7 +33,7 @@ async function seedDatabase() {
         name: "Skol 300ml",
         imageUrl:
           "https://utfs.io/f/oK9fzCAtRnIfE0Ol64Ky5CmqA4zfHNVYhbjGskML9iaZ0DIl",
-        category: "Cerveja",
+        category: "Cervejas",
         description: "",
         price: 2.49,
         size: "300ml",
@@ -42,7 +44,7 @@ async function seedDatabase() {
         name: "Skol 350ml",
         imageUrl:
           "https://utfs.io/f/oK9fzCAtRnIfAO8qqfrP8Jb1xlV57E2GkvuwMLtc6aeRFQj4",
-        category: "Cerveja",
+        category: "Cervejas",
         description: "",
         price: 3.49,
         size: "350ml",
@@ -52,19 +54,19 @@ async function seedDatabase() {
       {
         name: "BeatsTropical 269ml",
         imageUrl:
-          "https://utfs.io/f/oK9fzCAtRnIfgBwqdl5uFMmzCRrBYfdINw2J8e54o61DLHbX",
-        category: "Cerveja",
+          "https://utfs.io/f/oK9fzCAtRnIfSgBQO95OgLMIBSNZ1v7qfm62GeVu8oRKTcF0",
+        category: "Fermentados",
         description: "",
         price: 6.5,
         size: "269ml",
         available: true,
-        subCategory: "Lata",
+        subCategory: "Drinks",
       },
       {
         name: "Antartica 350ml",
         imageUrl:
           "https://utfs.io/f/oK9fzCAtRnIfgBJMgLOuFMmzCRrBYfdINw2J8e54o61DLHbX",
-        category: "Cerveja",
+        category: "Cervejas",
         description: "",
         price: 3.39,
         size: "350ml",
@@ -75,18 +77,18 @@ async function seedDatabase() {
         name: "BeatsSense 269ml",
         imageUrl:
           "https://utfs.io/f/oK9fzCAtRnIfTQfiBdocMamPA9vHby86UN7it4JBeYZx0Fhp",
-        category: "Cerveja",
+        category: "Fermentados",
         description: "",
         price: 6.5,
         size: "269ml",
         available: true,
-        subCategory: "Lata",
+        subCategory: "Drinks",
       },
       {
         name: "Budweiser 300ml",
         imageUrl:
           "https://utfs.io/f/oK9fzCAtRnIfY70zH5gDNbPXjK6cB4rtl1d9Esv2L7hGnIiM",
-        category: "Cerveja",
+        category: "Cervejas",
         description: "",
         price: 2.79,
         size: "300ml",
@@ -97,7 +99,7 @@ async function seedDatabase() {
         name: "Brahma 350ml",
         imageUrl:
           "https://utfs.io/f/oK9fzCAtRnIfqONfd8VcnbxQwC4hILAXmZ6iSy1Wu9evDEHF",
-        category: "Cerveja",
+        category: "Cervejas",
         description: "",
         price: 3.39,
         size: "350ml",
@@ -108,7 +110,7 @@ async function seedDatabase() {
         name: "Budweiser 473ml",
         imageUrl:
           "https://utfs.io/f/oK9fzCAtRnIf6bqASbjuY7pk0n8hcUdBwRW41Gvrq6eZQEjF",
-        category: "Cerveja",
+        category: "Cervejas",
         description: "",
         price: 4.99,
         size: "473ml",
@@ -119,18 +121,18 @@ async function seedDatabase() {
         name: "BeatsGt 269ml",
         imageUrl:
           "https://utfs.io/f/oK9fzCAtRnIfjbGa0sHFoWBiM1TtXcqQUmIDN9ZeAjHgz4wR",
-        category: "Cerveja",
+        category: "Destilados",
         description: "",
         price: 6.5,
         size: "269ml",
         available: true,
-        subCategory: "Lata",
+        subCategory: "Drinks",
       },
       {
         name: "Original 300ml",
         imageUrl:
           "https://utfs.io/f/oK9fzCAtRnIfxxSPk8ZEzSiRfNUvuw5a6lxk01tDIqcPOAMm",
-        category: "Cerveja",
+        category: "Cervejas",
         description: "",
         price: 3.19,
         size: "300ml",
@@ -141,12 +143,34 @@ async function seedDatabase() {
         name: "Original 473ml",
         imageUrl:
           "https://utfs.io/f/oK9fzCAtRnIf780Zfz1MbRLaHWp3XVFPnUkisAlDJhr40mS8",
-        category: "Cerveja",
+        category: "Cervejas",
         description: "",
         price: 5.39,
         size: "473ml",
         available: true,
         subCategory: "Latão",
+      },
+      {
+        name: "BeatsRedmix 269ml",
+        imageUrl:
+          "https://utfs.io/f/oK9fzCAtRnIfwFYNksh7SaLsdRCAD0k3VTHe1XIPc6UjiEB9",
+        category: "Destilados",
+        description: "",
+        price: 5.39,
+        size: "473ml",
+        available: true,
+        subCategory: "Drinks",
+      },
+      {
+        name: "Coca-Cola 2L",
+        imageUrl:
+          "https://utfs.io/f/oK9fzCAtRnIfupEZgZfIUwz3xXef1mJFjBEOZ05svKcdM8Ri",
+        category: "Não alcoólicos",
+        description: "",
+        price: 5.39,
+        size: "473ml",
+        available: false,
+        subCategory: "Refrigerante",
       },
     ];
 

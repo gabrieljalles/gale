@@ -36,7 +36,7 @@ const Search = () => {
           control={form.control}
           name="title"
           render={({ field }) => (
-            <FormItem className="flex w-full items-center">
+            <FormItem className="flex flex-col w-full items-center">
               <FormControl>
                 <Input
                   className="w-full"
