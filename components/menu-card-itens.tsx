@@ -11,7 +11,7 @@ interface MenuCardItensProps {
 const MenuCardItens = ({ menuItem }: MenuCardItensProps) => {
   return (
     <Card className="  min-w-[200px] rounded-lg">
-      <CardContent className=" flex p-0 px-2 pt-1">
+      <CardContent className=" w-full flex p-0 px-2 pt-1">
         {/* IMAGEM */}
         <div className="relative flex-shrink-0 h-auto w-20 items-center justify-center">
           <Image
@@ -23,12 +23,23 @@ const MenuCardItens = ({ menuItem }: MenuCardItensProps) => {
         </div>
         {/* TEXTO*/}
         <div className="flex flex-1 flex-col px-1 py-3">
-          <h3 className="truncate font-semibold">{menuItem.name}</h3>
+          <h3
+            className={` font-semibold text-xs ${!menuItem.available ? "line-through text-gray-500" : ""}`}
+          >
+            {menuItem.name}
+          </h3>
+          {!menuItem.available && (
+            <p className="text-xs text-gray-500">Sem estoque!</p>
+          )}
         </div>
 
         {/*PREÇO*/}
         <div className="flex-shrink-0 flex px-1 py-3  items-center">
-          <h3 className="font-semibold">{formatCurrency(menuItem.price)}</h3>
+          <h4
+            className={`font-semibold text-sm ${!menuItem.available ? "line-through text-gray-500" : ""}`}
+          >
+            {formatCurrency(menuItem.price)}
+          </h4>
         </div>
       </CardContent>
     </Card>

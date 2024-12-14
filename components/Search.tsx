@@ -24,7 +24,6 @@ const Search = () => {
   });
   const router = useRouter();
 
-  //Preciso criar a pesquisa depois
   const handleSubmit = (data: z.infer<typeof formSchema>) => {
     router.push(`/menu?title=${data.title}`);
   };

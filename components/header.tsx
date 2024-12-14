@@ -5,6 +5,7 @@ import { MenuIcon } from "lucide-react";
 import { Button } from "./ui/button";
 // import SidebarSheet from "./SidebarSheet";
 import Link from "next/link";
+import SidebarSheet from "./sidebar-sheet";
 
 const Header = () => {
   return (
@@ -24,7 +25,7 @@ const Header = () => {
             <MenuIcon />
           </Button>
         </SheetTrigger>
-        {/* <SidebarSheet /> */}
+        <SidebarSheet />
       </Sheet>
     </div>
   );

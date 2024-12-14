@@ -4,11 +4,10 @@ import { MenuItens } from "@prisma/client";
 
 import { db } from "../../../lib/prisma";
 
-export const getProducts = async (searchParams?: {
-  title?: string;
-  category?: string;
-}): Promise<MenuItens[]> => {
-  const { title, category } = searchParams || {};
+export const getProducts = async (
+  searchParams: { title?: string; category?: string } = {}
+): Promise<MenuItens[]> => {
+  const { title, category } = searchParams;
 
   return db.menuItens.findMany({
     where: {
@@ -20,8 +19,7 @@ export const getProducts = async (searchParams?: {
       }),
       ...(category && {
         category: {
-          contains: category,
-          mode: "insensitive",
+          equals: category,
         },
       }),
     },
