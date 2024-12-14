@@ -3,33 +3,32 @@ import { quickSearchOptions } from "@/constants/quick-search";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import MenuCardItens from "@/components/menu-card-itens";
-import Banner from "@/components/banner";
 import { getProducts } from "../_data-access/product/get-products";
 import Search from "@/components/Search";
 import Header from "@/components/header";
 
-const MenuPage = async ({
-  searchParams,
-}: {
-  searchParams: { title?: string; category?: string };
-}) => {
-  const resolvedParams = searchParams || {};
+interface MenuPageProps {
+  searchParams: Promise<{ title?: string; category?: string }>;
+}
+
+const MenuPage = async ({ searchParams }: MenuPageProps) => {
+  const resolvedParams = (await searchParams) || {};
   const menuItens = await getProducts(resolvedParams);
 
   return (
     <main>
       <Header />
       <div className=" mx-4 mt-4"></div>
-      <div className="bg-black h-[150px] mx-4 mt-4 items-center justify-center rounded-xl">
+      {/* <div className="bg-black h-[150px] mx-4 mt-4 items-center justify-center rounded-xl">
         <p>ola mundo</p>
-      </div>
+      </div> */}
       <div className="mt-4 mx-4">
         <Search />
       </div>
 
       {/*FastSearch*/}
       <div className="flex gap-3 m-4 overflow-x-scroll [&::-webkit-scrollbar]:hidden">
-        {quickSearchOptions.map((option) => (
+        {quickSearchOptions?.map((option) => (
           <Button
             className="gap-2 font-bold border text-md"
             variant="secondary"

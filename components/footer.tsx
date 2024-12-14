@@ -1,5 +1,3 @@
-import { Card, CardContent } from "./ui/card";
-
 const Footer = () => {
   return (
     <footer>
