@@ -1,12 +1,9 @@
-import Image from "next/image";
 import { quickSearchOptions } from "@/constants/quick-search";
-import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import MenuCardItens from "@/components/menu-card-itens";
 import { getProducts } from "../_data-access/product/get-products";
 import Search from "@/components/Search";
 import Header from "@/components/header";
-import { SetStateAction, useState } from "react";
 import QuickSearchOptions from "@/components/quick-search-options";
 
 interface MenuPageProps {
