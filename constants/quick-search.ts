@@ -1,4 +1,4 @@
-interface QuickSearchOptionProps {
+export interface QuickSearchOptionProps {
   imageUrl: string;
   title: string;
   alt: string;

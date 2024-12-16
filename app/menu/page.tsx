@@ -6,6 +6,8 @@ import MenuCardItens from "@/components/menu-card-itens";
 import { getProducts } from "../_data-access/product/get-products";
 import Search from "@/components/Search";
 import Header from "@/components/header";
+import { SetStateAction, useState } from "react";
+import QuickSearchOptions from "@/components/quick-search-options";
 
 interface MenuPageProps {
   searchParams: Promise<{ title?: string; category?: string }>;
@@ -14,6 +16,11 @@ interface MenuPageProps {
 const MenuPage = async ({ searchParams }: MenuPageProps) => {
   const resolvedParams = (await searchParams) || {};
   const menuItens = await getProducts(resolvedParams);
+  // const [selectedFastSearch, setSelectedFastSearch] = useState("");
+
+  // const handleSelectFastSearch = (id: string) => {
+  //   setSelectedFastSearch(id);
+  // };
 
   return (
     <main>
@@ -27,32 +34,8 @@ const MenuPage = async ({ searchParams }: MenuPageProps) => {
       </div>
 
       {/*FastSearch*/}
-      <div className="flex gap-3 m-4 overflow-x-scroll [&::-webkit-scrollbar]:hidden">
-        {quickSearchOptions?.map((option) => (
-          <Button
-            className="gap-2 font-bold border text-md"
-            variant="secondary"
-            key={option.title}
-            asChild
-          >
-            <Link
-              href={
-                option.title.toLowerCase() === "todos"
-                  ? "/menu"
-                  : `/menu?category=${option.title}`
-              }
-            >
-              <Image
-                src={option.imageUrl}
-                width={18}
-                height={18}
-                alt={option.alt}
-              />
-              {option.title}
-            </Link>
-          </Button>
-        ))}
-      </div>
+      <QuickSearchOptions quickSearchOptions={quickSearchOptions} />
+
       <div className="flex flex-col m-4 gap-1.5">
         {menuItens.map((menuItem) => (
           <MenuCardItens menuItem={menuItem} key={menuItem.id} />
