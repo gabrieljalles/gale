@@ -21,7 +21,7 @@ const QuickSearchOptions = ({
     <div className="flex gap-3 m-4 overflow-x-scroll [&::-webkit-scrollbar]:hidden">
       {quickSearchOptions?.map((option) => (
         <Button
-          className={`gap-2 font-bold border text-md
+          className={`gap-2 font-bold border text-md hover:bg-[#FCC221]
               ${selectedQuickSearchOption === option.title ? "bg-[#FCC221]" : ""}
             `}
           variant="secondary"

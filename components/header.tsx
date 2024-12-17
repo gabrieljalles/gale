@@ -7,7 +7,7 @@ import SidebarSheet from "./sidebar-sheet";
 
 const Header = () => {
   return (
-    <div className="flex flex-row items-center border-b-2 bg-white justify-between p-4">
+    <header className="flex flex-row items-center border-b-2 bg-white justify-between p-4">
       <Link href="/">
         <Image
           src="/gale/logo-completa.png"
@@ -25,7 +25,7 @@ const Header = () => {
         </SheetTrigger>
         <SidebarSheet />
       </Sheet>
-    </div>
+    </header>
   );
 };
 

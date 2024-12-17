@@ -5,6 +5,7 @@ import { getProducts } from "../_data-access/product/get-products";
 import Search from "@/components/Search";
 import Header from "@/components/header";
 import QuickSearchOptions from "@/components/quick-search-options";
+import Banner from "@/components/banner";
 
 interface MenuPageProps {
   searchParams: Promise<{ title?: string; category?: string }>;
@@ -13,51 +14,58 @@ interface MenuPageProps {
 const MenuPage = async ({ searchParams }: MenuPageProps) => {
   const resolvedParams = (await searchParams) || {};
   const menuItens = await getProducts(resolvedParams);
-  // const [selectedFastSearch, setSelectedFastSearch] = useState("");
 
-  // const handleSelectFastSearch = (id: string) => {
-  //   setSelectedFastSearch(id);
-  // };
+  const isEmptySearch = menuItens.length === 0;
 
   return (
-    <main>
+    <div className="flex flex-col min-h-screen">
       <Header />
-      <div className=" mx-4 mt-4"></div>
-      {/* <div className="bg-black h-[150px] mx-4 mt-4 items-center justify-center rounded-xl">
-        <p>ola mundo</p>
-      </div> */}
-      <div className="mt-4 mx-4">
-        <Search />
-      </div>
+      <main className="flex-grow justify-end">
+        <Banner />
 
-      {/*FastSearch*/}
-      <QuickSearchOptions quickSearchOptions={quickSearchOptions} />
+        <div className="mt-4 mx-4">
+          <Search />
+        </div>
 
-      <div className="flex flex-col m-4 gap-1.5">
-        {menuItens.map((menuItem) => (
-          <MenuCardItens menuItem={menuItem} key={menuItem.id} />
-        ))}
-      </div>
+        {/*FastSearch*/}
+        <QuickSearchOptions quickSearchOptions={quickSearchOptions} />
 
-      <div className=" m-4 items-center justify-center rounded-xl ">
-        <Link
-          href={
-            "https://api.whatsapp.com/send/?phone=553496971927&text&type=phone_number&app_absent=0"
-          }
-        >
-          <video
-            autoPlay
-            muted
-            loop
-            playsInline
-            className="rounded-md object-cover"
+        <div className="flex flex-col m-4 gap-1.5">
+          {!isEmptySearch ? (
+            <>
+              {menuItens.map((menuItem) => (
+                <MenuCardItens menuItem={menuItem} key={menuItem.id} />
+              ))}
+            </>
+          ) : (
+            <div className="flex min-h-[200px] justify-center items-center">
+              <p className="text-3xl text-gray-300">
+                Nenhum produto encontrado!
+              </p>
+            </div>
+          )}
+        </div>
+
+        <div className="m-4 items-center justify-center rounded-xl ">
+          <Link
+            href={
+              "https://api.whatsapp.com/send/?phone=553496971927&text&type=phone_number&app_absent=0"
+            }
           >
-            <source src="/whats.mp4" />
-            Seu navegador não suporta vídeos.
-          </video>
-        </Link>
-      </div>
-    </main>
+            <video
+              autoPlay
+              muted
+              loop
+              playsInline
+              className="rounded-md object-cover"
+            >
+              <source src="/whats.mp4" />
+              Seu navegador não suporta vídeos.
+            </video>
+          </Link>
+        </div>
+      </main>
+    </div>
   );
 };
 
