@@ -2,13 +2,12 @@ import Image from "next/image";
 
 const Banner = () => {
   return (
-    <div className="relative border rounded-xl max-h-[600px] m-4 overflow-hidden">
+    <div className="relative border rounded-xl m-4 h-[200px]  overflow-hidden">
       <Image
-        width={200}
-        height={200}
-        src={"/banners/promocao.png"}
+        fill
+        src={"/banners/frete.png"}
         alt={"Um banner de promoção."}
-        className="object-cover w-full "
+        className="object-cover"
       />
     </div>
   );
