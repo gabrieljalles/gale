@@ -1,15 +1,51 @@
+"use client";
 import Image from "next/image";
+import { useEffect, useState } from "react";
 
-const Banner = () => {
+interface BannerProps{
+  images: {
+    alt: string,
+    path: string,
+  }
+}[];
+
+const Banner = ({images}:BannerProps) => {
+  const [currentIndex, setCurrentIndex] = useState(0); 
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+    }, 3000); 
+
+    return () => clearInterval(interval);
+  }, [currentIndex]);
+
   return (
-    <div className="relative border rounded-xl max-h-[600px] m-4 overflow-hidden">
-      <Image
-        width={200}
-        height={200}
-        src={"/banners/promocao.png"}
-        alt={"Um banner de promoção."}
-        className="object-cover w-full "
-      />
+    <div className="relative overflow-hidden rounded-xl m-4">
+      <div
+        className="flex transition-transform duration-700 ease-in-out"
+        style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+      >
+        {images?.map((image, index) => (
+          <img
+            key={index}
+            src={image.path}
+            alt={image.alt}
+            className="w-full h-full object-cover"
+          />
+        ))}
+      </div>
+      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+        {images.map((_, index) => (
+          <button
+            key={index}
+            onClick={() => setCurrentIndex(index)}
+            className={`w-2 h-2 rounded-full transition-colors duration-300 ${
+              currentIndex === index ? 'bg-[#FCC221]' : 'bg-white'
+            }`}
+          />
+        ))}
+      </div>
     </div>
   );
 };
