@@ -23,8 +23,13 @@ export const getProducts = async (
         },
       }),
     },
-    orderBy: {
-      createdAt: "desc",
-    },
+    orderBy: [
+      {
+        available: "desc"
+      },
+      {
+        createdAt: "desc",
+      },
+    ],
   });
 };

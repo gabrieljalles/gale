@@ -2,7 +2,7 @@ const { PrismaClient } = require("@prisma/client");
 
 const prisma = new PrismaClient();
 
-//Como rodar o seed:
+//Como rodar o seed: npx prisma db seed
 
 async function seedDatabase() {
   try {
@@ -167,10 +167,142 @@ async function seedDatabase() {
           "https://utfs.io/f/oK9fzCAtRnIfupEZgZfIUwz3xXef1mJFjBEOZ05svKcdM8Ri",
         category: "Não alcoólicos",
         description: "",
-        price: 5.39,
+        price: 10.99,
+        size: "473ml",
+        available: true,
+        subCategory: "Refrigerante",
+      },
+      {
+        name: "Monster tradicional 473ml",
+        imageUrl:
+          "https://utfs.io/f/oK9fzCAtRnIfq8jQrbVcnbxQwC4hILAXmZ6iSy1Wu9evDEHF",
+        category: "Não alcoólicos",
+        description: "",
+        price: 9.99,
         size: "473ml",
         available: false,
-        subCategory: "Refrigerante",
+        subCategory: "Energético",
+      },
+      {
+        name: "Heineken shot 250ml",
+        imageUrl:
+          "https://utfs.io/f/oK9fzCAtRnIfWUKQ36m7V9aZuRjmeKvyx78pzXUkPlwtfNo5",
+        category: "Cervejas",
+        description: "",
+        price: 5.25,
+        size: "250ml",
+        available: false,
+        subCategory: "Energético",
+      },
+      {
+        name: "Heineken 350ml",
+        imageUrl:
+          "https://utfs.io/f/oK9fzCAtRnIfYhWw8ZDNbPXjK6cB4rtl1d9Esv2L7hGnIiM3",
+        category: "Cervejas",
+        description: "",
+        price: 5.75,
+        size: "350ml",
+        available: false,
+        subCategory: "Lata",
+      },
+      {
+        name: "Heineken 600ml",
+        imageUrl:
+          "https://utfs.io/f/oK9fzCAtRnIf5xpkLhXMB0Xr3xNtufO8bmvLqKY7ohZdsipE",
+        category: "Cervejas",
+        description: "",
+        price: 9.99,
+        size: "350ml",
+        available: false,
+        subCategory: "Lata",
+      },
+      {
+        name: "Paulistinha tradicional - Unidade",
+        imageUrl:
+          "https://utfs.io/f/oK9fzCAtRnIfUjRwOn35GaYnRLZtxwlOzCmf2dryQ7EvkBu4",
+        category: "Tabacaria",
+        description: "",
+        price: 2,
+        size: "1un",
+        available: false,
+        subCategory: "Palheiro",
+      },
+      {
+        name: "Paulistinha ouro - Unidade",
+        imageUrl:
+          "https://utfs.io/f/oK9fzCAtRnIfH5AWQ2YtkSAUVc64qsF8Lpr0YNeWxMIzghlK",
+        category: "Tabacaria",
+        description: "",
+        price: 2.5,
+        size: "1un",
+        available: false,
+        subCategory: "Palheiro",
+      },
+      {
+        name: "Paulistinha tradicional - Maço",
+        imageUrl:
+          "https://utfs.io/f/oK9fzCAtRnIfUjRwOn35GaYnRLZtxwlOzCmf2dryQ7EvkBu4",
+        category: "Tabacaria",
+        description: "",
+        price: 28,
+        size: "1 maço",
+        available: false,
+        subCategory: "Palheiro",
+      },
+      {
+        name: "Paulistinha ouro - Maço",
+        imageUrl:
+          "https://utfs.io/f/oK9fzCAtRnIfH5AWQ2YtkSAUVc64qsF8Lpr0YNeWxMIzghlK",
+        category: "Tabacaria",
+        description: "",
+        price: 30,
+        size: "1 maço",
+        available: false,
+        subCategory: "Palheiro",
+      },
+      {
+        name: " Água com gás 500ml",
+        imageUrl:
+          "https://utfs.io/f/oK9fzCAtRnIfJukRATC9gSYHrpMkaq1X3Oc40dBDy8TWQJRK",
+        category: "Não alcoólicos",
+        description: "",
+        price: 2.5,
+        size: "500ml",
+        available: false,
+        subCategory: "água",
+      },
+      {
+        name: " Água tônica 350ml",
+        imageUrl:
+          "https://utfs.io/f/oK9fzCAtRnIfNJN9HWllrpIT8LMF0B5vyKmh2RV7YzCEesDN",
+        category: "Não alcoólicos",
+        description: "",
+        price: 3,
+        size: "500ml",
+        available: false,
+        subCategory: "água",
+      },
+      {
+        name: "Vinho Mioranza 750ml",
+        imageUrl:
+          "https://utfs.io/f/oK9fzCAtRnIfgBt83EmuFMmzCRrBYfdINw2J8e54o61DLHbX",
+        category: "Vinhos",
+        description: "",
+        price: 30,
+        size: "750ml",
+        available: false,
+        subCategory: "suave",
+      },
+      {
+        name: "Vinho Pergola 750ml",
+        imageUrl:
+          "https://utfs.io/f/oK9fzCAtRnIfx9AAIwZEzSiRfNUvuw5a6lxk01tDIqcPOAMm",
+        category: "Vinhos",
+        description: "",
+        price: 30,
+        size: "750ml",
+        available: false,
+        subCategory: "suave",
       },
     ];
 
