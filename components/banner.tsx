@@ -6,16 +6,16 @@ interface BannerProps{
   images: {
     alt: string,
     path: string,
-  }
-}[];
+  }[]
+};
 
 const Banner = ({images}:BannerProps) => {
-  const [currentIndex, setCurrentIndex] = useState(0); 
-
+  const [currentIndex, setCurrentIndex] = useState(0);
+  
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 3000); 
+    }, 6000); 
 
     return () => clearInterval(interval);
   }, [currentIndex]);
@@ -26,11 +26,12 @@ const Banner = ({images}:BannerProps) => {
         className="flex transition-transform duration-700 ease-in-out"
         style={{ transform: `translateX(-${currentIndex * 100}%)` }}
       >
-        {images?.map((image, index) => (
-          <img
+        {images.map((image, index) => (
+          <Image
             key={index}
             src={image.path}
             alt={image.alt}
+            fill
             className="w-full h-full object-cover"
           />
         ))}

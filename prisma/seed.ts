@@ -8,6 +8,17 @@ async function seedDatabase() {
   try {
     const products = [
       {
+        name: "Amstel 350ml",
+        imageUrl:
+          "https://utfs.io/f/oK9fzCAtRnIfCkYImadOnRv8qt3ENQ0WUfdFx6VbmirlZgeu",
+        category: "Cervejas",
+        description: "",
+        price: 3.75,
+        size: "350ml",
+        available: true,
+        subCategory: "lata",
+      },
+      {
         name: "Antartica 300ml",
         imageUrl:
           "https://utfs.io/f/oK9fzCAtRnIfYRGmwjDNbPXjK6cB4rtl1d9Esv2L7hGnIiM3",
@@ -57,7 +68,7 @@ async function seedDatabase() {
           "https://utfs.io/f/oK9fzCAtRnIfSgBQO95OgLMIBSNZ1v7qfm62GeVu8oRKTcF0",
         category: "Fermentados",
         description: "",
-        price: 6.5,
+        price: 7,
         size: "269ml",
         available: true,
         subCategory: "Drinks",
@@ -79,7 +90,7 @@ async function seedDatabase() {
           "https://utfs.io/f/oK9fzCAtRnIfTQfiBdocMamPA9vHby86UN7it4JBeYZx0Fhp",
         category: "Fermentados",
         description: "",
-        price: 6.5,
+        price: 7,
         size: "269ml",
         available: true,
         subCategory: "Drinks",
@@ -123,7 +134,7 @@ async function seedDatabase() {
           "https://utfs.io/f/oK9fzCAtRnIfjbGa0sHFoWBiM1TtXcqQUmIDN9ZeAjHgz4wR",
         category: "Destilados",
         description: "",
-        price: 6.5,
+        price: 7,
         size: "269ml",
         available: true,
         subCategory: "Drinks",
@@ -156,8 +167,8 @@ async function seedDatabase() {
           "https://utfs.io/f/oK9fzCAtRnIfwFYNksh7SaLsdRCAD0k3VTHe1XIPc6UjiEB9",
         category: "Destilados",
         description: "",
-        price: 5.39,
-        size: "473ml",
+        price: 7,
+        size: "269ml",
         available: true,
         subCategory: "Drinks",
       },
@@ -304,7 +315,9 @@ async function seedDatabase() {
         available: false,
         subCategory: "suave",
       },
+     
     ];
+
 
     for (const product of products) {
       await prisma.MenuItens.create({
