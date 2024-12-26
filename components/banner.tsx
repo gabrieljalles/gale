@@ -15,10 +15,10 @@ const Banner = ({ images }: BannerProps) => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 6000);
+    }, 8000);
 
     return () => clearInterval(interval);
-  }, [currentIndex]);
+  }, [images.length]);
 
   return (
     <div className="relative overflow-hidden rounded-xl h-52 m-4">
@@ -27,9 +27,8 @@ const Banner = ({ images }: BannerProps) => {
         style={{ transform: `translateX(-${currentIndex * 100}%)` }}
       >
         {images.map((image, index) => (
-          <div className="relative flex-shrink-0 w-full h-full">
+          <div className="relative flex-shrink-0 w-full h-full" key={index}>
             <Image
-              key={index}
               src={image.path}
               alt={image.alt}
               fill
