@@ -7,30 +7,26 @@ import Header from "@/components/header";
 import QuickSearchOptions from "@/components/quick-search-options";
 import Banner from "@/components/banner";
 
-
-
 interface MenuPageProps {
   searchParams: Promise<{ title?: string; category?: string }>;
 }
 
 const MenuPage = async ({ searchParams }: MenuPageProps) => {
-
   const images = [
     {
       alt: "Explicativo whatsapp",
-      path: "/public/banners/whats.png"
+      path: "/banners/whats.png",
     },
     {
       alt: "explicativo do frete",
-      path: "/banners/frete.png"
+      path: "/banners/frete.png",
     },
     {
       alt: "explicativo de barrigudinhas",
-      path: "/banners/barrigudinhas.png"
+      path: "/banners/barrigudinhas.png",
     },
-    
   ];
-  
+
   const resolvedParams = (await searchParams) || {};
   const menuItens = await getProducts(resolvedParams);
 
