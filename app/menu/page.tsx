@@ -6,6 +6,7 @@ import Search from "@/components/Search";
 import Header from "@/components/header";
 import QuickSearchOptions from "@/components/quick-search-options";
 import Banner from "@/components/banner";
+import StatusOpening from "@/components/StatusOpening";
 
 
 interface MenuPageProps {
@@ -40,6 +41,7 @@ const MenuPage = async ({ searchParams }: MenuPageProps) => {
       <Header />
       <main className="flex-grow justify-end">
         
+        <StatusOpening/>
         
         <Banner images={images} />
 
