@@ -74,7 +74,7 @@ const MenuPage = async ({ searchParams }: MenuPageProps) => {
               playsInline
               className="rounded-md object-cover"
             >
-              <source src="/whats.mp4" />
+              <source src="/whats.mp4" type="video/mp4" />
               Seu navegador não suporta vídeos.
             </video>
           </Link>
