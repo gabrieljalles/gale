@@ -21,18 +21,18 @@ const Banner = ({ images }: BannerProps) => {
   }, [images.length]);
 
   return (
-    <div className="relative overflow-hidden rounded-xl h-52 m-4">
+    <div className="relative overflow-hidden rounded-xl h-40 m-4">
       <div
         className="flex transition-transform duration-700 w-full h-full ease-in-out"
         style={{ transform: `translateX(-${currentIndex * 100}%)` }}
       >
         {images.map((image, index) => (
-          <div className="relative flex-shrink-0 w-full h-full" key={index}>
+          <div className="relative  justify-center items-center object-contain flex-shrink-0 w-full h-full" key={index}>
             <Image
               src={image.path}
               alt={image.alt}
               fill
-              className="w-full h-full object-cover"
+              className="object-cover"
             />
           </div>
         ))}
