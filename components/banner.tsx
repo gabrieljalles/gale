@@ -21,7 +21,7 @@ const Banner = ({ images }: BannerProps) => {
   }, [images.length]);
 
   return (
-    <div className="relative overflow-hidden rounded-xl h-40 m-4">
+    <div className="relative overflow-hidden rounded-xl h-40 m-1">
       <div
         className="flex transition-transform duration-700 w-full h-full ease-in-out"
         style={{ transform: `translateX(-${currentIndex * 100}%)` }}

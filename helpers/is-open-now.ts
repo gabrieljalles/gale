@@ -1,10 +1,10 @@
-export interface isOpenNowProps{
-weekDay: string;
-opening: string;
-closing: string;
+export interface isOpenNowProps {
+  weekDay: string;
+  opening: string;
+  closing: string;
 }
 
-export const isOpenNow = (schedule: isOpenNowProps[]): boolean => {
+export const isOpenNow = (schedule: isOpenNowProps[]): string | false => {
   const now = new Date();
   const currentDay = now.toLocaleDateString("en-US", { weekday: "long" }); // Exemplo: "Monday"
   const currentTime = now.toTimeString().slice(0, 5); // Exemplo: "14:30"
@@ -32,5 +32,9 @@ export const isOpenNow = (schedule: isOpenNowProps[]): boolean => {
   }
 
   // Verificar se o horário atual está entre o horário de abertura e fechamento
-  return now >= openingTime && now <= closingTime;
+  if (now >= openingTime && now <= closingTime) {
+    return todaySchedule.closing; // Retorna o horário de fechamento se estiver aberto
+  }
+
+  return false; // Retorna false se estiver fora do horário
 };

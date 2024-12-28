@@ -7,25 +7,28 @@ import Header from "@/components/header";
 import QuickSearchOptions from "@/components/quick-search-options";
 import Banner from "@/components/banner";
 
+
 interface MenuPageProps {
   searchParams: Promise<{ title?: string; category?: string }>;
 }
 
+const images = [
+  {
+    alt: "Explicativo whatsapp",
+    path: "/banners/whats.png",
+  },
+  {
+    alt: "explicativo do frete",
+    path: "/banners/frete.png",
+  },
+  {
+    alt: "explicativo de barrigudinhas",
+    path: "/banners/barrigudinhas.png",
+  },
+];
+
 const MenuPage = async ({ searchParams }: MenuPageProps) => {
-  const images = [
-    {
-      alt: "Explicativo whatsapp",
-      path: "/banners/whats.png",
-    },
-    {
-      alt: "explicativo do frete",
-      path: "/banners/frete.png",
-    },
-    {
-      alt: "explicativo de barrigudinhas",
-      path: "/banners/barrigudinhas.png",
-    },
-  ];
+  
 
   const resolvedParams = (await searchParams) || {};
   const menuItens = await getProducts(resolvedParams);
@@ -36,6 +39,8 @@ const MenuPage = async ({ searchParams }: MenuPageProps) => {
     <div className="flex flex-col min-h-screen">
       <Header />
       <main className="flex-grow justify-end">
+        
+        
         <Banner images={images} />
 
         <div className="mt-4 mx-4">

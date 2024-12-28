@@ -8,6 +8,17 @@ async function seedDatabase() {
   try {
     const products = [
       {
+        name: "Amstel ultra 269ml - Sem glúten ",
+        imageUrl:
+          "https://utfs.io/f/oK9fzCAtRnIf1v83ZzUhzOoRgfSwjAKCULZqV4urHd9F1EYn",
+        category: "Cervejas",
+        description: "Sem glúten",
+        price: 4.65,
+        size: "269ml",
+        available: true,
+        subCategory: "Sem gluten",
+      },
+      {
         name: "Amstel 350ml",
         imageUrl:
           "https://utfs.io/f/oK9fzCAtRnIfCkYImadOnRv8qt3ENQ0WUfdFx6VbmirlZgeu",
