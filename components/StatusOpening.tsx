@@ -17,7 +17,7 @@ const StatusOpening = () => {
       {status ? (
         <p className="text-gray-400 text-sm mt-1">{`Aberto até às ${status}`}</p>
       ) : (
-        <p className="text-gray-400 text-sm mt-1">Estamos fechados.</p>
+        <p className="text-gray-400 text-sm mt-1"></p>
       )}
     </div>
   );

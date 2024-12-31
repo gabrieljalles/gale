@@ -8,6 +8,28 @@ async function seedDatabase() {
   try {
     const products = [
       {
+        name: "Gelo - 5kg ",
+        imageUrl:
+          "https://utfs.io/f/oK9fzCAtRnIfXYJTBqKVclKkod89RqAWH2mybQtChgJeIvED",
+        category: "Outros",
+        description: "",
+        price: 10,
+        size: "5kg",
+        available: true,
+        subCategory: "gelo",
+      },
+      {
+        name: "Smirnoff Ice 275ml ",
+        imageUrl:
+          "https://utfs.io/f/oK9fzCAtRnIfDilBIwWGORFvfJrNWxbBokZ5SQTCtmyHswz6",
+        category: "Destilados",
+        description: "",
+        price: 9.19,
+        size: "275ml",
+        available: true,
+        subCategory: "Ice",
+      },
+      {
         name: "Amstel ultra 269ml - Sem glúten ",
         imageUrl:
           "https://utfs.io/f/oK9fzCAtRnIf1v83ZzUhzOoRgfSwjAKCULZqV4urHd9F1EYn",
