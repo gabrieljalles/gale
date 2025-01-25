@@ -68,7 +68,7 @@ const MenuPage = async ({ searchParams }: MenuPageProps) => {
           )}
         </div>
 
-        <div className="m-4 items-center justify-center rounded-xl ">
+        <div className="m-4 z-[1000] items-center justify-center rounded-xl ">
           <Link
             href={
               "https://api.whatsapp.com/send/?phone=553496971927&text&type=phone_number&app_absent=0"
