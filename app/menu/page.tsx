@@ -50,7 +50,7 @@ const MenuPage = async ({ searchParams }: MenuPageProps) => {
         </div>
 
         {/*FastSearch*/}
-        <QuickSearchOptions quickSearchOptions={quickSearchOptions} />
+        <QuickSearchOptions className="m-4" quickSearchOptions={quickSearchOptions} />
 
         <div className="flex flex-col m-4 gap-1.5">
           {!isEmptySearch ? (
@@ -82,7 +82,8 @@ const MenuPage = async ({ searchParams }: MenuPageProps) => {
               className="rounded-md object-cover"
             >
               <source src="/whats.mp4" type="video/mp4" />
-              Seu navegador não suporta vídeos.
+              <source src="/whats.webm" type="video/webm" />
+              Seu navegador não suporta vídeos. Clique aqui para pedir no whats.
             </video>
           </Link>
         </div>
