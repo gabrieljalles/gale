@@ -50,7 +50,7 @@ const MenuPage = async ({ searchParams }: MenuPageProps) => {
         </div>
 
         {/*FastSearch*/}
-        <QuickSearchOptions className="m-4" quickSearchOptions={quickSearchOptions} />
+        <QuickSearchOptions quickSearchOptions={quickSearchOptions} />
 
         <div className="flex flex-col m-4 gap-1.5">
           {!isEmptySearch ? (
