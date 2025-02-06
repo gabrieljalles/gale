@@ -11,6 +11,11 @@ export const quickSearchOptions: QuickSearchOptionProps[] = [
     alt: "Tudo que vendemos",
   },
   {
+    imageUrl: "/megafone.svg",
+    title: "Promoções",
+    alt: "Procure por promoções",
+  },
+  {
     imageUrl: "/cerveja.svg",
     title: "Cervejas",
     alt: "Todos os tipos de cervejas",
@@ -36,9 +41,19 @@ export const quickSearchOptions: QuickSearchOptionProps[] = [
     alt: "Procure por fermentados",
   },
   {
-    imageUrl: "/combos.svg",
-    title: "Combos",
-    alt: "Combos de produtos",
+    imageUrl: "/bala-listrada_1.svg",
+    title: "Balas e doces",
+    alt: "Procure por balas e doces",
+  },
+  {
+    imageUrl: "/alimentos-congelados.svg",
+    title: "Frios e congelados",
+    alt: "Procure por frios e congelados",
+  },
+  {
+    imageUrl: "/cesta.svg",
+    title: "Artigos de Mercearia",
+    alt: "Procure por frios e congelados",
   },
   {
     imageUrl: "/vinhos.svg",
@@ -46,8 +61,13 @@ export const quickSearchOptions: QuickSearchOptionProps[] = [
     alt: "Procure por vinhos",
   },
   {
+    imageUrl: "/salgadinhos.svg",
+    title: "Salgadinhos",
+    alt: "Procure por salgadinhos",
+  },
+  {
     imageUrl: "/gelo.svg",
     title: "Outros",
-    alt: "Outros, de gelo até outras coisas...",
+    alt: "Outros, de gelo até carvão....",
   },
 ];
